@@ -1,4 +1,4 @@
-package com.captaindeer.rookmotionchallengemvvm.ui
+package com.captaindeer.rookmotionchallengemvvm.ui.login.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

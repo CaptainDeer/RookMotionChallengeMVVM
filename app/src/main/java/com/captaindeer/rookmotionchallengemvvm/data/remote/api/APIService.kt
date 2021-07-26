@@ -1,6 +1,6 @@
-package com.captaindeer.rookmotionchallengemvvm.data.remote.services
+package com.captaindeer.rookmotionchallengemvvm.data.remote.api
 
-import com.captaindeer.rookmotionchallengemvvm.data.remote.responses.UsersResponse
+import com.captaindeer.rookmotionchallengemvvm.data.remote.model.UsersResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
