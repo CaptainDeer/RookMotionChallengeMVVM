@@ -1,4 +1,4 @@
-package com.captaindeer.rookmotionchallengemvvm.ui
+package com.captaindeer.rookmotionchallengemvvm.ui.main.view
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -19,9 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
 
         //NavBar
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)

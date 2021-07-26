@@ -1,4 +1,4 @@
-package com.captaindeer.rookmotionchallengemvvm.data.remote.responses
+package com.captaindeer.rookmotionchallengemvvm.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
