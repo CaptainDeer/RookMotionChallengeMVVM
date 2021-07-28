@@ -1,6 +1,5 @@
 package com.captaindeer.rookmotionchallengemvvm.ui.home.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
@@ -30,7 +29,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     override fun onBindViewHolder(holder: HomeAdapter.HomeViewHolder, position: Int) {
         holder.bind(items[position])
         holder.itemView.setOnClickListener {
-            val action = HomeFragmentDirections.navigateToDetailFragment(items[position].id)
+            val action = HomeFragmentDirections.navigateToDetailFragment(items[position])
             Navigation.findNavController(it).navigate(action)
         }
     }

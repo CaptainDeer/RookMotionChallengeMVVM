@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.captaindeer.rookmotionchallengemvvm.databinding.FragmentHomeBinding
@@ -16,13 +17,21 @@ class HomeFragment : Fragment(), androidx.appcompat.widget.SearchView.OnQueryTex
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var adapter: HomeAdapter
-    lateinit var viewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = HomeViewModel(requireActivity().application)
-        viewModel.downloadData()
+        homeViewModel.progressVisibility.observe(this, Observer {
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+        })
+        homeViewModel.message.observe(this, Observer {
+            binding.message.text = it
+        })
+        homeViewModel.allUsers.observe(this, Observer {
+            adapter.setDataList(ArrayList(it))
+            adapter.notifyDataSetChanged()
+        })
 
     }
 
@@ -38,11 +47,8 @@ class HomeFragment : Fragment(), androidx.appcompat.widget.SearchView.OnQueryTex
         super.onViewCreated(view, savedInstanceState)
         //RecyclerView
         initRecyclerView()
-        //viewModel
-        viewModel.getAllUsersObserver().observe(requireActivity(), Observer {
-            adapter.setDataList(ArrayList(it))
-            adapter.notifyDataSetChanged()
-        })
+        //Data
+        homeViewModel.downloadData()
         //SearchView
         binding.searchView.setOnQueryTextListener(this)
     }
@@ -57,15 +63,16 @@ class HomeFragment : Fragment(), androidx.appcompat.widget.SearchView.OnQueryTex
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (!query.isNullOrEmpty()) {
-
+            homeViewModel.getUser(query)
         }
         return false
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
         if (newText.isNullOrBlank()) {
-
+            homeViewModel.getAllUsers()
         }
         return false
     }
+
 }

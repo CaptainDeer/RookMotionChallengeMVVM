@@ -10,12 +10,13 @@ import androidx.navigation.fragment.navArgs
 import com.captaindeer.rookmotionchallengemvvm.R
 import com.captaindeer.rookmotionchallengemvvm.data.local.entities.UserEntity
 import com.captaindeer.rookmotionchallengemvvm.databinding.FragmentUserDetailBinding
+import com.captaindeer.rookmotionchallengemvvm.ui.home.view.HomeFragmentArgs
 import com.captaindeer.rookmotionchallengemvvm.ui.userdetail.viewmodel.UserDetailViewModel
 import com.squareup.picasso.Picasso
 
 class UserDetailFragment : Fragment() {
 
-    private val args: UserDetailFragmentArgs by navArgs()
+    private val args: HomeFragmentArgs by navArgs()
     private var _binding: FragmentUserDetailBinding? = null
     private val binding get() = _binding!!
     lateinit var viewModel: UserDetailViewModel
@@ -33,8 +34,7 @@ class UserDetailFragment : Fragment() {
     ): View? {
         _binding = FragmentUserDetailBinding.inflate(layoutInflater)
 
-        val id = args.userId
-        setUserInfo(viewModel.getUser(id))
+        setUserInfo(args.userEntity)
 
         //Navigation
         binding.btnBack.setOnClickListener {

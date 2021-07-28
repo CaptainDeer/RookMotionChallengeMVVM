@@ -12,4 +12,6 @@ class UserDetailViewModel(app: Application) : AndroidViewModel(app) {
     fun getUser(id: Int): UserEntity {
         return database.userDao().getUserById(id)
     }
+
+
 }
