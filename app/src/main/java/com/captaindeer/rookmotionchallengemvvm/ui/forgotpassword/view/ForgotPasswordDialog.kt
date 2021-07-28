@@ -1,4 +1,4 @@
-package com.captaindeer.rookmotionchallengemvvm.ui.forgotpassword
+package com.captaindeer.rookmotionchallengemvvm.ui.forgotpassword.view
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

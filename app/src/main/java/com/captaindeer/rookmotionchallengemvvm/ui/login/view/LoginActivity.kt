@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.captaindeer.rookmotionchallengemvvm.databinding.ActivityLoginBinding
-import com.captaindeer.rookmotionchallengemvvm.ui.forgotpassword.ForgotPasswordDialog
+import com.captaindeer.rookmotionchallengemvvm.ui.forgotpassword.view.ForgotPasswordDialog
 import com.captaindeer.rookmotionchallengemvvm.ui.login.viewmodel.LoginViewModel
 import com.captaindeer.rookmotionchallengemvvm.ui.main.view.MainActivity
 import com.captaindeer.rookmotionchallengemvvm.ui.registry.view.RegistryActivity

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/blue"
         android:orientation="vertical"
         tools:context=".ui.userdetail.view.UserDetailFragment">
 
@@ -22,132 +22,152 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/blue">
+            android:layout_marginLeft="@dimen/h4"
+            android:layout_marginRight="@dimen/h4"
+            android:layout_marginBottom="@dimen/h4"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="20dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/appCompatTextView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:text="Name: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/h6"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/appCompatTextView8"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView8"
-                tools:text="Jose Rodrigo" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/appCompatTextView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Last name: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/h6"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/appCompatTextView8"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvUserLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/appCompatTextView7"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView7"
-                tools:text="Gutierrez Perez" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/appCompatTextView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Id: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/h6"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/appCompatTextView7"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView7" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvUserId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/appCompatTextView9"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView9"
-                tools:text="55" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/appCompatTextView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="Email: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/h6"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/appCompatTextView9"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView9" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvUserEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
-                android:maxLines="3"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/appCompatTextView4"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView4"
-                tools:text="pedro@gmail.com" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_back"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/light_white"
-                android:text="Back"
-                android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
+                    android:text="Name:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/appCompatTextView9"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView9" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/h6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView8"
+                    app:layout_constraintTop_toTopOf="@+id/appCompatTextView8"
+                    tools:text="Jose Rodrigo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
+                    android:text="Last name:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/appCompatTextView8"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/h6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView7"
+                    app:layout_constraintTop_toTopOf="@+id/appCompatTextView7"
+                    tools:text="Gutierrez Perez" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="monospace"
+                    android:text="Id: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/h6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView9"
+                    app:layout_constraintTop_toTopOf="@+id/appCompatTextView9"
+                    tools:text="55" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
+                    android:text="Email:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/h6"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/appCompatTextView7"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView7" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="3"
+                    android:textColor="@color/light_white"
+                    android:textSize="@dimen/h6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatTextView4"
+                    app:layout_constraintTop_toTopOf="@+id/appCompatTextView4"
+                    tools:text="pedro@gmail.com" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/king_blue"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

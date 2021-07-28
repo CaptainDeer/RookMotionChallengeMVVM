@@ -18,10 +18,12 @@ class HomeViewModel(app: Application) : AndroidViewModel(app) {
     private var retrofit = RetrofitBuilder()
     private val database = LocalDatabase(app)
 
+    init {
+        retrofit = RetrofitBuilder()
+    }
 
     fun downloadData() {
         viewModelScope.launch {
-            retrofit = RetrofitBuilder()
             val response = retrofit.getAllUsers()
             if (response.isSuccessful) {
                 response.body()?.data?.forEach { user ->

@@ -17,6 +17,8 @@ class RetrofitBuilder {
         .baseUrl("https://reqres.in/")
         .addConverterFactory(GsonConverterFactory.create()).client(client).build()
 
+
+
     suspend fun getAllUsers(): Response<UsersResponse> {
         apiServices = retrofit.create(APIService::class.java)
         return apiServices.getAllUsers()
